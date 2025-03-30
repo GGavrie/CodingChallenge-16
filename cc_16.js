@@ -63,4 +63,11 @@ function displayProducts(products) {
       productContainer.appendChild(productElement);
     });
   }
-  
+  // Task 5: Reusable Error Handler
+  function handleError(error) {
+    console.error('An error occurred:', error.message);
+  }
+  //Task 6 
+  // This function will be called when the script loads
+  fetchProductsThen();
+  fetchProductsAsync();
