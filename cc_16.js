@@ -22,3 +22,21 @@ function fetchProductsThen() {
   
   // This function will be called when the script loads
   //fetchProductsThen();
+
+  // Task 3: Fetch Products with async/await
+async function fetchProductsAsync() {
+    try {
+      const response = await fetch('https://www.course-api.com/javascript-store-products');
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      
+      const products = await response.json();
+      console.log('Products fetched with async/await:');
+      displayProducts(products);
+    } catch (error) {
+      handleError(error);
+    }
+  }
+  
